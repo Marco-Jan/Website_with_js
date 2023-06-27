@@ -17,10 +17,10 @@ function createheader() {
   header.style.alignItems = "center";
 
   const menu = document.createElement("nav");
-  menu.style.display = "flex";
-  menu.style.justifyContent = "space-around";
+  
   const menuList = document.createElement("ul");
-
+  menuList.className = "menu-list"; // Neue CSS-Klasse für das Menü hinzufügen
+  
   const menuItem1 = document.createElement("li");
   const menuLink1 = document.createElement("a");
   menuLink1.href = "#";
@@ -48,6 +48,8 @@ function createheader() {
 
   return header;
 }
+
+
 
 function createDiv() {
   const box_front = document.createElement("div");

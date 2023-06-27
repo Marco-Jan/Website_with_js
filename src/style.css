@@ -27,6 +27,14 @@ h1{
     font-size: 50pt;
 }
 
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* // Ändere die Anzahl der Menüpunkte entsprechend */
+    justify-content: center;
+    gap: 10px; /* // Anpassen des Abstands zwischen den Menüpunkten */
+  }
+  
+
 .div_front_left{
     background-color: blueviolet;
     width: 40vh;
