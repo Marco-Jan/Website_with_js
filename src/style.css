@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+body { 
+    background-color: aqua;
+   /*background: url('../src/img/sherry-christian-8Myh76_3M2U-unsplash.jpg');*/
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+@font-face { 
+
+    font-family: 'NewFont';
+    src: url(./fonts/monoton_font/Monoton-Regular.ttf);
+}
+
+header{
+    margin: 0 auto;
+    height: 10vh;
+    background-color: orange;
+}
+h1{
+    font-family: 'NewFont';
+    font-size: 50pt;
+}
+
+.div_front_left{
+    background-color: blueviolet;
+    width: 40vh;
+    height: 40vh;
+    font-family: 'NewFont';
+    font-size: 50pt;
+}
+.div_front_right{
+    background-color: rgb(238, 255, 0);
+}
