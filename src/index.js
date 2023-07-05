@@ -80,7 +80,7 @@ function createMultiTags(parent_node, tag_node, num, list, menu) {
 }
 
 
-/* erzeugt Header*/
+//Header start
 
 function createHeader(){
 
@@ -94,31 +94,42 @@ function createHeader(){
   createMultiTags(menu, "li", menu_list.length, menu_list, true);
 
 
-  In
   logo_header.src = '../src/img/Logo.png';
 }
+// Header end
 
-function createMainpage(){In
+// Mainpage start
+function createMainpage(){
+
   const main = createTag(null,'div', 'content_box')
   const mainBg = createTag(main,'img', 'mainBGId')
+  const main2 = createTag(main,'div', 'main2Id')
+  
+  mainBg.src = "../src/img/MJ_Merano_tapas-5.jpg";
 
+  const news1Content = createTag(main2,'div', 'news1Content',null, 'News1')
+  // const newsText1 = createTag(news1Content,'p', 'newsText1Id',null, )
+  const newsImage1 = createTag(news1Content,'img', 'newsImage1Id')
+  newsImage1.src = "../src/img/MJ_Merano_tapas-1.jpg";
 
-  mainBg.src = "/src/img/MJ_MC_Lunch_0078_20200125__MG_0151.jpg";
-}
-
-function createNews(NewsInput){
-
-  const newsContent = createTag(null, 'div', null, 'newsContent_box','News')
-  const news1Content = createTag(newsContent,'div', 'news1Content',null, 'News1')
+  const news2Content = createTag(main2,'div', 'news2Content',null, 'News2')
+  const newsImage2 = createTag(news2Content,'img', 'newsImage2Id')
+  newsImage2.src = "../src/img/MJ_MG_04842018.jpg";
 
   NewsInput.forEach((News) => {
     
       createCard(menu_coffee, drink, order);
     
    
-  })
-
+  });
 }
+
+
+
+  
+  
+
+
 
 
 
