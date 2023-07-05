@@ -1,8 +1,6 @@
 * {
     padding: 0;
-    margin: 0 auto;
     font-family: 'newFont';
-    overflow: hidden;
 
 }
 @font-face { 
@@ -25,6 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -34,11 +33,12 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 5em;
-    margin-bottom: 2em;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    margin: 2em;
+    padding: 10px;
+    /* filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); */
 }
 h1 {
-    font-size: 40pt;
+    font-size: 25pt;
     color: #b68809;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 
@@ -60,27 +60,42 @@ a {
     font-size: 10pt;
     color: #b68809;
 }
+
+a:hover {
+    color: #f2f2f2;
+    
+}
 /* Mainpage start */
 #mainBGId{
-    width: 50%;
+    border: 3px solid #b68809;
+    width: 22em;
     margin-bottom: 2em;
     border-radius: 10px;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
+#CharMeranoId{
+    z-index: 999;
+    background-color: red;
+}
+
 
 /* news section */
 #main2Id{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
 /*  */
 #newsImage1Id, #newsImage2Id{
-    width: 40%;
+    width: 18em;
     height: auto;
-    border-radius: 5px;
-    border: 1.5px groove black;
+    border: 1.5px solid #b68809;
+    margin: 0 60px 0 60px;
+
+    /* border-radius: 20px; */
+    /* border: 5px groove black; */
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 #news1Content, #news2Content{
@@ -96,20 +111,20 @@ a {
 
 @media screen and (min-width: 980px){
 
-    *{
-        overflow: visible;
-    }
+    
     /* Header start */
     #logo_headerId{
         width: 110px;
         height: 110px;
     }
+
     header{
         height: 140px;
-        max-width: 1200px;
         margin-bottom: 2em;
     }
     h1{
+        position: relative;
+        left: 150px;
         font-size: 60pt;
     }
     .menu_header
@@ -124,12 +139,14 @@ a {
     ul{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        margin-right: 4em;
 
     }
     a{
         font-size: 20pt;
+        margin-right: 2em;
+
 
     }
 
@@ -140,6 +157,12 @@ a {
         width: 50%;
         
 
+    }
+
+    #main2Id{
+        margin: 30px auto;
+        display: flex;
+        flex-direction: row;
     }
 
 
