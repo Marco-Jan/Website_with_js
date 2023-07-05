@@ -2,46 +2,62 @@
     margin: 0;
     padding: 0;
     margin: 0 auto;
-}
-body { 
-    background-color: aqua;
-   /*background: url('../src/img/sherry-christian-8Myh76_3M2U-unsplash.jpg');*/
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-}
+    font-family: 'newFont';
 
+}
 @font-face { 
+    font-family: 'newFont';
+    src: url(../src/fonts/Loobster_nice/Lobster-Regular.ttf);
+}
 
-    font-family: 'NewFont';
-    src: url(./fonts/monoton_font/Monoton-Regular.ttf);
+body { 
+    background-color: #9e7c1a
+   /*background: url('../src/img/sherry-christian-8Myh76_3M2U-unsplash.jpg');*/
+    
+}
+
+
+#logo_headerId{
+    width: 50px;
+    height: 50px;
 }
 
 header{
-    margin: 0 auto;
-    height: 10vh;
-    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
 }
-h1{
-    font-family: 'NewFont';
-    font-size: 50pt;
+h1 {
+    color: #9e7c1a;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+
 }
 
-.menu-list {
-    display: grid;
-    grid-template-columns: repeat(3, auto); /* // Ändere die Anzahl der Menüpunkte entsprechend */
+ul {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10px; /* // Anpassen des Abstands zwischen den Menüpunkten */
-  }
-  
+    align-items: center;
+    list-style-type: none; 
+    padding: 0;
+   
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 
-.div_front_left{
-    background-color: blueviolet;
-    width: 40vh;
-    height: 40vh;
-    font-family: 'NewFont';
-    font-size: 50pt;
+    
+  }
+a {
+    text-decoration: none;
+    color: #9e7c1a;
 }
-.div_front_right{
-    background-color: rgb(238, 255, 0);
+
+#mainBGId{
+    width: 100%;
+
+
 }
+
+
+
+
+

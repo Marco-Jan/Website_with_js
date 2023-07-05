@@ -1,86 +1,143 @@
+'use strict'
+
 import _ from "lodash";
 import "./style.css";
 
-function createHtml() {
-  const element = document.createElement("div");
-  element.style.display = "flex";
-  element.style.flexDirection = "column";
-  element.style.alignItems = "center";
-  return element;
-}
 
-function createheader() {
-  const header = document.createElement("header");
-  header.className = "header";
-  header.style.display = "flex";
-  header.style.justifyContent = "center";
-  header.style.alignItems = "center";
-
-  const menu = document.createElement("nav");
+class News {
+  constructor(date, time, newscontent){
   
-  const menuList = document.createElement("ul");
-  menuList.className = "menu-list"; // Neue CSS-Klasse für das Menü hinzufügen
+    this.date = date;
+    this.time = time;
+    this.newscontent = newscontent;
+
+  }
+  getDate() {
+    return this.date;
+  }
+
+  getTime() {
+    return this.time;
+  }
+
+  getNews() {
+    return this.newscontent;
+  }
+}
+
+
+function createTag(parent_node, tag_node, id_name, class_name, content) {
+  const tag = document.createElement(tag_node);
+
+  if (parent_node != null) {
+    parent_node.append(tag);
+  } else {
+    const startpoint = document.getElementById("content");
+    
+    startpoint.append(tag);
+
+    
+    
+
+  }
+
+  if (id_name != null) {
+    tag.id = id_name;
+  }
+
+  if (class_name != null) {
+    tag.className = class_name;
+  }
+
+  if (content != null) {
+    tag.innerHTML = content;
+  }
+
+  return tag;
+}
+/* mulittags function */
+
+function createMultiTags(parent_node, tag_node, num, list, menu) {
+  for (let i = 0; i < num; i++) {
+    if (menu) {
+      createTag(
+        parent_node,
+        tag_node,
+        null,
+        list[i],
+        '<a href="#' + list[i].replace(/ /g, "-") + '">' + list[i] + "</a>"
+      );
+    } else {
+      createTag(
+        parent_node,
+        tag_node,
+        null,
+        list[i].replace(/ /g, "_"),
+        list[i]
+      );
+    }
+  }
+}
+
+
+/* erzeugt Header*/
+
+function createHeader(){
+
+  const header = createTag(null, 'header')
+  const logo_header = createTag(header,'img','logo_headerId',null)
+  const heading = createTag(header,'h1',null, null,'Merano-Bar')
+  const nav_header = createTag(header, "nav", "nav_header");
+  const menu = createTag(nav_header, "ul", null, "menu_header");
+
+  let menu_list = ["Home", "Our Team", "Contact"];
+  createMultiTags(menu, "li", menu_list.length, menu_list, true);
+
+
+  In
+  logo_header.src = '../src/img/Logo.png';
+}
+
+function createMainpage(){In
+  const main = createTag(null,'div', 'content_box')
+  const mainBg = createTag(main,'img', 'mainBGId')
+
+
+  mainBg.src = "/src/img/MJ_MC_Lunch_0078_20200125__MG_0151.jpg";
+}
+
+function createNews(NewsInput){
+
+  const newsContent = createTag(null, 'div', null, 'newsContent_box','News')
+  const news1Content = createTag(newsContent,'div', 'news1Content',null, 'News1')
+
+  NewsInput.forEach((News) => {
+    
+      createCard(menu_coffee, drink, order);
+    
+   
+  })
+
+}
+
+
+
+
+
+function initial(){
+
+  const News1 = new News ('28.7.2023', '18:30','Beachparty');
+  const News2 = new News ('15.8.2023', '20:15', 'Midsummer Party');
+
+  const NewsInput = [News1, News2]; 
+
   
-  const menuItem1 = document.createElement("li");
-  const menuLink1 = document.createElement("a");
-  menuLink1.href = "#";
-  menuLink1.textContent = "Menüpunkt 1";
-  menuItem1.appendChild(menuLink1);
 
-  const menuItem2 = document.createElement("li");
-  const menuLink2 = document.createElement("a");
-  menuLink2.href = "#";
-  menuLink2.textContent = "Menüpunkt 2";
-  menuItem2.appendChild(menuLink2);
-
-  const menuItem3 = document.createElement("li");
-  const menuLink3 = document.createElement("a");
-  menuLink3.href = "#";
-  menuLink3.textContent = "Menüpunkt 3";
-  menuItem3.appendChild(menuLink3);
-
-  menuList.appendChild(menuItem1);
-  menuList.appendChild(menuItem2);
-  menuList.appendChild(menuItem3);
-  menu.appendChild(menuList);
-
-  header.appendChild(menu);
-
-  return header;
+  createHeader();
+  createMainpage();
+  createNews(NewsInput);
 }
 
+initial();
 
 
-function createDiv() {
-  const box_front = document.createElement("div");
-  box_front.className = "box_front";
-
-  return box_front;
-}
-
-const htmlElement = createHtml();
-const headerElement = createheader();
-const divElement1 = createDiv();
-const divElement2 = createDiv();
-
-divElement1.className = "div_front_left";
-divElement1.style.position = "sticky";
-divElement1.style.top = "8vh";
-divElement2.className = "div_front_right";
-divElement2.style.height = "80vh";
-divElement2.style.width = "60vh";
-// divElement2.style.backgroundImage = `url(${Pic1})`;
-divElement2.style.position = "sticky";
-divElement2.style.top = "10vh";
-
-const container = document.createElement("div");
-container.style.display = "flex";
-container.style.justifyContent = "flex-start";
-container.appendChild(divElement1);
-divElement1.textContent = _.join(["Die-Hotel-Bar"]);
-container.appendChild(divElement2);
-
-//übergabe an body
-document.body.appendChild(htmlElement);
-document.body.appendChild(headerElement);
-document.body.appendChild(container);
